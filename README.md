@@ -1,66 +1,87 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> It is important to note that this example can be improved, but it is an introductory example and I intend to bring more content of this type with more examples, consuming, for example, resources from cloud providers, such as SQS for queues, S3 for Storange, etc.
 
-## About Laravel
+[*Serverless*](https://www.serverless.com/) applications are becoming increasingly popular due to their ability to automatically scale and reduce operational costs.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+[**PHP**](https://www.php.net/) is a programming language widely used for web development and can be used to create efficient and scalable *Serverless* applications.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Using this kind of approach when providing a **PHP with Serverless** application, we have a very big gain in time, money and mainly, scalability.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+However, with this, we will no longer, for example, pay a __fixed price__ for hosting, often with a fixed and small size of resources, such as memory and processing. In addition to the configuration being much more laborious and costing much more effort in a traditional hosting.
 
-## Learning Laravel
+My example will use **PHP version 8.1** and the [Bref](https://bref.sh/) package. We will also use Laravel*, with a simple backend, with MySQL and Redis database.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+To get started, it's important to have the PHP environment set up with Composer, and also Node.js installed, to ensure that our tutorial flows.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+First, we must install the [*Serverless Framework*](https://www.serverless.com/) CLI, using the following command [NPM](https://nodejs.org/en/download):
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+npm install -g serverless
+```
 
-## Laravel Sponsors
+> It is important to note that _Bref_ is only compatible with versions above 3 of the Serverless Framework (which is the current version).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Have your [*AWS*](https://aws.amazon.com/pt/) credentials in hand so that we can proceed with the tutorial, where you will have to configure Serverless with your credentials with the following command:
 
-### Premium Partners
+```bash
+serverless config credentials --provider aws --key <key> --secret <secret>
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+With that, we will create a common project with *Laravel*, using the `create-project` command by *composer*:
 
-## Contributing
+```bash
+composer create-project laravel/laravel laravel-serverless-boilerplate
+```
+## Bref
+With your new project open, install Laravel Bref using composer:
+```
+composer require bref/bref bref/laravel-bridge --update-with-dependencies
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Now, with Bref installed, you will have Bref executables available within your vendor, knowing that, we will run the Bref initialization command:
+```
+php artisan vendor:publish --tag=serverless-config
+```
+## Deploy
+Finally, we reached the final stretch, the implementation of this idea. To launch it, just run the commands below:
+> We don't want to deploy "dev" caches that were generated on our machine (because the paths will be different in AWS Lambda). Let's clean up before going upstairs:
+```bash
+php artisan config:clear
+```
 
-## Code of Conduct
+> When running on AWS Lambda, the Laravel application will automatically cache its configuration during startup. You don't need to run php crafter config:cache before deploying.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+ ```bash
+serverless deploy
+```
 
-## Security Vulnerabilities
+When finished, the `deploy` command will show the URL of the application.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Know that this is the basics, this *Serverless* configuration is minimal and can be extended and adapted to your needs. So if you want to deploy to production or learn more about *Serverless*, follow me on YouTube for more content, (I want to create more related content)
 
-## License
+## Links
+- [Sample repository](https://github.com/hebertcisco/laravel-serverless-boilerplate)
+- [My channel](https://www.youtube.com/channel/UCIXLXWPLZUWUa8tJ8c8EeKg)
+- [How to Host a Node.js Backend on Vercel](https://www.youtube.com/watch?v=Y-RoNF3Hd7I)
+- [Deploying Python API (FastApi) on Vercel](https://www.youtube.com/watch?v=r5VfItbTAt8)
+- [Serverless Framework](https://www.serverless.com/framework/docs/getting-started)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](issues).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+Or buy me a coffee 🙌🏾
+
+<a href="https://www.buymeacoffee.com/hebertcisco">
+    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=hebertcisco&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" />
+</a>
+
+## 📝 License
+
+Copyright © 2023 [Hebert F Barros](https://github.com/hebertcisco).<br />
+This project is [MIT](LICENSE) licensed.
