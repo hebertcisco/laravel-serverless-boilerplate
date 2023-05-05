@@ -10,7 +10,7 @@ Using this kind of approach when providing a **PHP with Serverless** application
 
 However, with this, we will no longer, for example, pay a __fixed price__ for hosting, often with a fixed and small size of resources, such as memory and processing. In addition to the configuration being much more laborious and costing much more effort in a traditional hosting.
 
-My example will use **PHP version 8.1** and the [Bref](https://bref.sh/) package. We will also use Laravel*, with a simple backend, with MySQL and Redis database.
+My example will use **PHP version 8.1** and the [Bref](https://bref.sh/) package. We will also use *Laravel*.
 
 To get started, it's important to have the PHP environment set up with Composer, and also Node.js installed, to ensure that our tutorial flows.
 
