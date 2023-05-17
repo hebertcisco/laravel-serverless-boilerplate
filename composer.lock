@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.269.6",
+            "version": "3.269.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "343f7088f246d4667172e69d5f2bf440496bb708"
+                "reference": "84f5f9c4f9c4cd7997ca3b7f91fabaf7cc73b0bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/343f7088f246d4667172e69d5f2bf440496bb708",
-                "reference": "343f7088f246d4667172e69d5f2bf440496bb708",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/84f5f9c4f9c4cd7997ca3b7f91fabaf7cc73b0bc",
+                "reference": "84f5f9c4f9c4cd7997ca3b7f91fabaf7cc73b0bc",
                 "shasum": ""
             },
             "require": {
@@ -151,9 +151,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.269.6"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.269.13"
             },
-            "time": "2023-05-04T18:22:48+00:00"
+            "time": "2023-05-16T18:24:42+00:00"
         },
         {
             "name": "bref/bref",
@@ -235,16 +235,16 @@
         },
         {
             "name": "bref/laravel-bridge",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brefphp/laravel-bridge.git",
-                "reference": "eabdcd43b100e9fd89878e6b6271bbcce350b88e"
+                "reference": "3bd8c34cf4690ca484eab1aef4dafd4fe4248392"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brefphp/laravel-bridge/zipball/eabdcd43b100e9fd89878e6b6271bbcce350b88e",
-                "reference": "eabdcd43b100e9fd89878e6b6271bbcce350b88e",
+                "url": "https://api.github.com/repos/brefphp/laravel-bridge/zipball/3bd8c34cf4690ca484eab1aef4dafd4fe4248392",
+                "reference": "3bd8c34cf4690ca484eab1aef4dafd4fe4248392",
                 "shasum": ""
             },
             "require": {
@@ -296,9 +296,9 @@
             ],
             "support": {
                 "issues": "https://github.com/brefphp/laravel-bridge/issues",
-                "source": "https://github.com/brefphp/laravel-bridge/tree/2.1.0"
+                "source": "https://github.com/brefphp/laravel-bridge/tree/2.1.1"
             },
-            "time": "2023-03-20T14:27:40+00:00"
+            "time": "2023-05-15T20:46:11+00:00"
         },
         {
             "name": "brick/math",
@@ -1674,16 +1674,16 @@
         },
         {
             "name": "laravel/octane",
-            "version": "v1.5.4",
+            "version": "v1.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/octane.git",
-                "reference": "6758daaee123302123842ec2d2b3ff02ae9410f6"
+                "reference": "065310f5baec40c61b68eeb8058b041079c3453e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/octane/zipball/6758daaee123302123842ec2d2b3ff02ae9410f6",
-                "reference": "6758daaee123302123842ec2d2b3ff02ae9410f6",
+                "url": "https://api.github.com/repos/laravel/octane/zipball/065310f5baec40c61b68eeb8058b041079c3453e",
+                "reference": "065310f5baec40c61b68eeb8058b041079c3453e",
                 "shasum": ""
             },
             "require": {
@@ -1751,7 +1751,7 @@
                 "issues": "https://github.com/laravel/octane/issues",
                 "source": "https://github.com/laravel/octane"
             },
-            "time": "2023-04-18T18:07:14+00:00"
+            "time": "2023-05-16T06:47:34+00:00"
         },
         {
             "name": "laravel/sanctum",
