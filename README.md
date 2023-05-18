@@ -2,6 +2,8 @@
 
 > It is important to note that this example can be improved, but it is an introductory example and I intend to bring more content of this type with more examples, consuming, for example, resources from cloud providers, such as SQS for queues, S3 for Storange, etc.
 
+[![🏗 Laravel CI](https://github.com/hebertcisco/laravel-serverless-boilerplate/actions/workflows/laravel-test.yml/badge.svg)](https://github.com/hebertcisco/laravel-serverless-boilerplate/actions/workflows/laravel-test.yml)
+
 [*Serverless*](https://www.serverless.com/) applications are becoming increasingly popular due to their ability to automatically scale and reduce operational costs.
 
 [**PHP**](https://www.php.net/) is a programming language widely used for web development and can be used to create efficient and scalable *Serverless* applications.
