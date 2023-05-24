@@ -5,7 +5,7 @@ updates:
 
     schedule:
       interval: "daily"
-      time: "11:13"
+      time: "11:15"
       timezone: "America/Sao_Paulo"
 
     target-branch: "develop"
@@ -22,7 +22,7 @@ updates:
 
     schedule:
       interval: "daily"
-      time: "04:00"
+      time: "11:15"
       timezone: "America/Sao_Paulo"
 
     target-branch: "develop"
