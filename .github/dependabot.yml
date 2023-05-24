@@ -1,10 +1,29 @@
 version: 2
-updates:  
-  - package-ecosystem: "composer"
+updates:
+  - package-ecosystem: "npm"
     directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "America/Sao_Paulo"
     target-branch: "develop"
     commit-message:
       prefix: "chore"
       include: "scope"
     labels:
       - "dependencies"
+      - "npm-dependencies"
+
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "America/Sao_Paulo"
+    target-branch: "develop"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "composer-dependencies"
